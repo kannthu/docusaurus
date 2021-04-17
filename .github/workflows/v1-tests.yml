@@ -1,9 +1,7 @@
 name: V1 Tests
 
 on:
-  push:
-    branches:
-      - test
+  - pull_request_target
 
 jobs:
   test:
@@ -20,7 +18,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: log untrusted output
         run: |
-          echo "action_state=yellow" >> $GITHUB_ENV
+          echo "CHROME_PATH=yellow" >> $GITHUB_ENV
       - name: Test
         run: node index.js
       - name: Audit URLs using Lighthouse
