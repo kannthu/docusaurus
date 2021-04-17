@@ -1,9 +1,9 @@
 name: V1 Tests
 
 on:
-  pull_request:
+  push:
     branches:
-      - master
+      - test
     paths:
       - 'website-1.x/**'
       - 'packages/docusaurus-1.x/**'
